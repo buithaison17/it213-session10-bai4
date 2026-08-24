@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: bai4
+  ai:
+    openai:
+      base-url: https://openrouter.ai/api/v1
+      api-key: ${OPENAI_API_KEY:sk-mock-key}
+      chat:
+        model: gpt-4o-mini
+        temperature: 0.7
+langfuse:
+  public-key: ${LANGFUSE_PUBLIC_KEY:pk-lf-demo}
+  secret-key: ${LANGFUSE_SECRET_KEY:sk-lf-demo}
+  base-url: ${LANGFUSE_BASE_URL:https://cloud.langfuse.com}
+  enabled: true
+  # Cấu hình giá tham chiếu local cho các model (USD per 1M tokens)
+  models:
+    gemini-2-5-flash:
+      input-price-per-million: 0.075
+      output-price-per-million: 0.30
+    deepseek-v3:
+      input-price-per-million: 0.14
+      output-price-per-million: 0.28
